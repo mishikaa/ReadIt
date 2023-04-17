@@ -1,0 +1,67 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/show.css">
+<link rel="stylesheet" href="/stylesheets/buttons/button.css">
+
+<div class="blog">
+    <div class="blog-section">
+        <h1><%= blog.title %> </h1>
+        <div class="user">~ <%= blog.user.username %></div>
+        
+        <div id="content">
+            <%- blog.content %>
+        </div>
+        
+        <!-- A Blog can be deleted or modified only by the user who created it-->
+       
+        <% if(currentUser && blog.user.equals(currentUser._id)) {%>
+            <div class="button-section">
+                <button class="btn edit-btn">
+                    <a href="/blogs/<%= blog._id %>/edit ">Edit</a>
+                </button>
+                
+                <!-- Delete a blog(only by the authorized user)  -->
+                <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+                    <button class="btn delete-btn">Delete</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+
+    <div class="comment-section">
+        <h1>Comments</h1>
+        
+        <!-- Display the add comment form only when the user is logged in -->
+        <% if(currentUser) { %>
+            <div class="add-comment-form">
+                <form action="/blogs/<%= blog._id %>/comments" method="POST">
+                    <textarea name="comment[content]" id="content" cols="30" rows="3" placeholder="Share your thoughts..."></textarea>
+                    <button class="btn">Submit</button>
+                </form>
+            </div>
+        <% } %>
+
+        <div class="comments-display">
+            <!-- Displaying all the comments of the blog -->
+            <% for(let comment of blog.comments) {%>
+                <div class="display-comment">
+                    <h4><%= comment.user.username %></h4>
+                    <p><%= comment.content %></p>
+
+                    <!-- A Comment can be deleted only by the blog owner or the one who commented -->
+                    <% if(currentUser && (currentUser.equals(comment.user._id) || currentUser.equals(blog.user._id))) {%>
+                        <div class="btn-section">
+                            <form action="/blogs/<%= blog._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <button class="btn delete-btn">Delete</button>
+                            </form>
+                            <% if(currentUser.equals(comment.user._id)) { %>
+                                <button class="btn edit-btn">Edit</button>
+                            <% } %>
+                        </div>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+
+</div>
+

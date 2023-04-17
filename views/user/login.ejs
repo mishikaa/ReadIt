@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')  %>
+<link rel="stylesheet" href="/stylesheets/form-styling.css">
+<link rel="stylesheet" href="/stylesheets/buttons/button.css">
+
+<div class="form">
+    <div class="heading">
+        <h1>Login</h1>
+    </div>
+    
+    <form action="/login" method="POST">   
+       
+        <div class="inputVal">
+            <div class="inputHeading">
+                <label for="username">Username</label>
+            </div>
+            <input type="text" name="username" id="username">
+        </div>
+        <div class="inputVal">
+            <div class="inputHeading">
+                <label for="password">Password</label>
+            </div>
+            <input type="password" name="password" id="password">
+        </div>
+        
+        <button id="signup-login-btn" class="btn">Login</button>
+    </form>
+        
+        
+    <p>New to ReadIt ? <a href="/signup">Signup</a></p>
+</div>    

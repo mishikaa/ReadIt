@@ -1,0 +1,179 @@
+/* -----------------
+  NAVBAR STUCK TO THE TOP
+ --------------- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    opacity: 0.9;
+    z-index: 99;
+    padding: 0;
+}
+
+/* -----------------
+  STYLING THE NAVIGATION BAR
+ --------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.75rem;
+}
+
+.mobile-navbar-btn {
+    padding: 1.2rem;
+    font-size: 5rem;
+    color: var(--white);
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-navbar-icon[name="close-outline"] {
+    display: none;
+}
+
+/* -----------------
+  STYLING THE 'heading-logo' part(contains site name and logo)
+ --------------- */
+.heading-logo{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+}
+
+.heading-logo .logo{
+    width: 5rem;
+}
+
+.mobile-logo {
+    width: 0;
+    visibility: hidden;
+}
+
+.heading-logo .heading {
+    font-size: 4rem;
+    font-family: 'Abril Fatface';
+    position: relative;
+}
+
+.heading-logo .heading::before {
+    content: attr(data-name);
+    color: #fbcd5a;
+    position: absolute;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.5s linear;
+}
+
+.heading-logo .heading:hover::before {
+    width: 100%;
+}
+
+
+/* -----------------
+  STYLING THE 'navbar-list' COMPONENT
+ --------------- */
+.navbar-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.75rem;
+}
+ 
+.navbar-list a {
+    font-family: 'Source Serif Pro', serif;
+}
+
+.navbar-list a:hover, .navbar-list a:active {
+    text-shadow: 2px 2px 5px #f2e7e7;
+    color: var(--white);
+}
+
+.dropdown-content {
+    display: none
+}
+
+/* -----------------
+  STYLING THE 'Get Started' BUTTON
+ --------------- */
+
+.rightbar .btn{
+    padding: 1.2rem 2.4rem;
+    background-color: var(--white);
+    font-weight: 600;
+    border: 1px solid var(--helper-color);
+    border-radius: 2.5rem; /* ---- take a greater value than the height, here height is 2.4rem */
+    transition: all 0.2s ease-in-out;
+}
+
+.rightbar .btn:hover {
+    font-weight: bolder;
+    text-shadow: 2px 2px 3px #cac8c8;
+    transform: scale(1.05);
+    box-shadow: -0.3em 0.5em 0.5em -0.4em#edf3ec;
+}
+
+/* -----------------
+   MAKING NAVBAR RESPONSIVE
+ --------------- */
+
+@media(max-width: 980px) {
+    .mobile-logo {
+        width: 5rem;
+        visibility: visible;
+        padding: 1.2rem;
+    }
+    .navbar {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: black;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        justify-content: flex-start;
+        align-items: center;
+
+        transform: translateX(100%);
+        transition: all 0.3s linear;
+
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .navbar .navbar-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .mobile-navbar-btn {
+        display:inline;
+        position:absolute;
+        top: 0;
+        right: 0;
+    }
+    .active .navbar{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(0);
+    }
+    .active .mobile-logo {
+        visibility: hidden;
+    }
+    .active .mobile-navbar-icon[name="close-outline"]{
+        display: block;
+        color: var(--white);
+
+    }
+    .active .mobile-navbar-icon[name="menu-outline"]{
+        display: none;
+    }
+}

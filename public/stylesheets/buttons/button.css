@@ -1,0 +1,35 @@
+.button-section {
+    display: flex;
+}
+.btn {
+    font-size: 1.6rem;
+    padding: 1.2rem 2.8rem;
+    border-radius: 4rem;
+    border-color: #f1faee;
+    color: var(--white);
+    transition: all 0.2s linear;
+
+    margin: 1.6rem;
+    cursor: pointer;
+}
+.delete-btn{
+    background-color: var(--delete-btn); 
+}
+
+.edit-btn{
+    background-color: var(--edit-btn); 
+}
+
+.btn:hover, .btn:active {
+    transform: scale(1.05);
+}
+
+#signup-login-btn {
+    padding: 1.2rem 8rem;
+    background-color: var(--primary-btn);
+    cursor: pointer;
+}
+
+#add-blog-btn {
+    background-color: var(--edit-btn);
+}

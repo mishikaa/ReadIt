@@ -1,0 +1,82 @@
+
+.frontPage {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)) ,
+        url("/images/frontPageBg.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    /* To center the mainbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 70vh;
+}
+
+.mainbox {
+    padding: 1rem 5rem 5rem 5rem;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    font-family: 'Alegreya', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+    background: rgba(244, 241, 241, 0.5);
+}
+
+.mainbox h2 {
+    font-family: 'Abril Fatface',cursive; 
+    font-size: 4rem;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 1px rgba(81, 81, 81, 0.5);
+}
+
+.btn2 {
+    background-image: linear-gradient(to right, #F09819 0%, #EDDE5D  51%, #ff9b45  100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+    
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-color: #edf3ec;
+    border-width: 3px 1px 5px;
+    border-radius: 4rem;
+    
+    margin: 20px 0 5px;
+    padding: 1.6rem 3.2rem;
+}
+
+.btn2:hover {
+    background-position: right center; /* change the direction of the change here */
+    font-weight: 800;
+    font-size: 1.7rem;
+    color: #fff;
+}
+
+.mainbox a{
+    color: black;
+    transition: color .2s ease-in-out;
+}
+.mainbox a:hover{
+    color: #e85115;
+    text-shadow: 2px 2px 6px #ff9505;
+}
+
+
+.mainbox .trending-icon{
+    font-size: 2rem;
+    margin: 0 0.2rem -0.4rem;
+}
+
+.mainbox .trending-icon:hover{
+    color: #c32f27;
+}

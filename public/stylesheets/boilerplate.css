@@ -1,0 +1,43 @@
+:root {
+    --primary-color: #f1f1f1;
+    --primary-shades: black;
+    --para-color: #80849c;
+    --helper-color: #515151;
+    --white: #fff;
+    --bg-color: #0F2027;
+    --delete-btn: #e63946;
+    --edit-btn: #006d77;
+    --primary-btn: #55a630;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    color: var(--primary-color);
+}
+
+body{
+    background: var(--bg-color);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  
+    background: linear-gradient(to top, #2C5364, #203A43, #0F2027); 
+    color: var(--white);
+    text-decoration: none;
+    padding-top: 15rem;
+    
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+li {
+    list-style-type: none;
+}

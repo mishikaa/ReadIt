@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/error.css">
+<div class="error-container">
+    <div class="error-img">
+        <img src="/images/error-img.png" alt="error image">
+    </div>
+    <div class="error-text">
+        <h1><%= statusCode %></h1>
+        <p><%= message %></p>
+    </div>
+    
+</div>

@@ -1,0 +1,39 @@
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+.error-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.error-text h1 {
+    font-size: 12rem;
+    color: aliceblue;
+    text-shadow: 2px 2px 2px #fe8686;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 0.75rem;
+}
+
+.error-text p {
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--para-color);
+    text-shadow: 2px 2px 2px #f6f3f3;
+    text-align: center;
+}
+img {
+    width: 100%;
+}
+
+/* font-family: 'Abril Fatface', cursive;
+font-family: 'DM Serif Display', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Source Serif Pro', serif; */
+

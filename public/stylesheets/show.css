@@ -1,0 +1,90 @@
+.blog {  
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 2rem;
+    padding: 0 10rem 0 10rem;
+    font-size: 2rem;
+}
+
+.blog h1 {
+    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1.5px;
+}
+
+.blog img {
+    width: 60rem;
+    margin: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.button-section {
+    display: flex;
+}
+
+.blog .user {
+    color: var(--para-color);
+    margin: 4rem 0;
+}
+
+.blog-section .user{
+    color: var(--para-color);
+    margin: 2rem 4rem;
+    text-align: right;
+    font-style: italic;
+}
+/* Styling comment-section */
+
+.blog .comment-section {
+    color: black;
+    background-color: #cff8bc;
+    display: flex;
+    flex-direction:column;
+    padding: 1rem 2rem;
+}
+
+.comment-section .add-comment-form, .comment-section .display-comment{
+    background-color: aliceblue;
+    padding: 1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.comment-section h1{
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.comment-section .btn {
+    background-color:#55a630;
+    padding: 0.75rem 1.25rem;
+    margin: 1rem 0.5rem;
+    border-radius: 1rem;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f8f8f8;
+    font-size: 1.5rem;
+    resize: none;
+  }
+
+.comment-section .comments-display {
+    margin: 2rem 0;
+}
+.display-comment {
+    margin: 2rem 0;
+}
+.btn-section {
+    display: flex;
+    justify-content: flex-end;
+}
+.display-comment .delete-btn {
+    background-color: var(--delete-btn);
+}
+.display-comment .edit-btn {
+    background-color: var(--edit-btn);
+}

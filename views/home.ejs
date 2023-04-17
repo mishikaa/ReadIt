@@ -1,0 +1,28 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/home.css">
+
+<section class="frontPage">
+        <div class="mainbox">
+            <h2>Be inspired. Be informed!</h2>
+            <h3 class="typing"></h3>
+            <a href="/blogs">
+                <button class="btn2">Start Reading</button>
+            </a>
+            <a href="#trending"> <ion-icon class="trending-icon" name="flame"></ion-icon>Here's what's trending </a>
+        </div>
+    </section>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    
+    <!-- TYPING EFFECT -->
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".typing", {
+            strings: ["Create, share and learn."],
+            typeSpeed: 100,
+            backSpeed: 100,
+            loop: true,
+            showCursor: false
+        })
+    </script>

@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/stylesheets/flash.css">
+
+    <label>
+        <% if(success && success.length) { %>
+        <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+        <div class="alert success">
+          <!-- <span class="alertClose">X</span> -->
+          <img class="alertClose" src="/images/close-icon.svg" alt="close-icon">
+          <span class="alertText"><%= success %>
+          <br class="clear"/></span>
+        </div>
+        <% } %>   
+      </label>
+
+    <label>
+        <% if(error && error.length) { %>
+        <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+        <div class="alert error">
+            <!-- <span class="alertClose">X</span> -->
+            <img class="alertClose" src="/images/close-icon.svg" alt="close-icon">
+            <span class="alertText"><%= error %>
+            <br class="clear"/></span>
+        </div>
+        <% } %>   
+    </label> 
+
+    <label>
+        <% if(warning && warning.length) { %>
+        <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+        <div class="alert warning">
+            <!-- <span class="alertClose">X</span> -->
+            <img class="alertClose" src="/images/close-icon.svg" alt="close-icon">
+            <span class="alertText"><%= warning %>
+            <br class="clear"/></span>
+        </div>
+        <% } %>   
+    </label> 
+<!-- </div> -->

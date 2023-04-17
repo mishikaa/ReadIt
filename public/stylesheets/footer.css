@@ -1,0 +1,36 @@
+.footerHeading {
+    font-size: 1.65rem;
+    font-weight: 600;
+    padding-bottom:10px;
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: black;
+    width: 100%;
+    font-size: 1.45rem;
+    margin-top: 10rem; 
+    line-height: 1.5rem;
+}
+
+#mainfoot {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+
+#mainfoot li a {
+    font-family: 'Source Serif Pro', serif;
+    line-height: 2rem;
+}
+
+#mainfoot a:hover, #mainfoot a:active {
+    text-shadow: 2px 2px 5px #f2e7e7;
+    color: var(--white);
+
+}
+
+.dropdown-content {
+    display: none
+}

@@ -1,0 +1,102 @@
+body {
+    font-family: 'Alegreya', serif; 
+    background-color: black;
+    margin: 0;
+}
+.cover {
+    background-color: #CDF0EA;
+    width: 100%;
+    height: 250px;
+    border: 2px #030303 solid;
+}
+.cover img {
+    border-radius: 50%;
+    border: 2px #0c0c0c solid;
+    width: 150px;
+    position: relative;
+    top:150px;
+    margin: 20px;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    color: white;
+    font-size: 1.5rem;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    padding: 10px 50px;
+}
+.infobar {
+    padding: 20px 0 ;
+    background-color: #14213d;
+    display: flex;
+    flex-direction: column;
+}
+.bar1, .bar1 span {
+    display: flex;
+    justify-content: space-around;
+    width: 83%;
+    margin: auto;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+}
+.bar1 span {
+    width: 100%;
+    padding: 20px 2rem;
+    font-size: 1.2em;
+}
+.bar1 span:nth-child(2) {
+    border-left: 1px #14213d solid;
+    border-right: 1px #14213d solid;
+    border-radius: 0;
+}
+.bar2{
+    width: 80.5%;
+    margin: 2rem auto 0;
+    padding: 1rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 1px rgb(0 0 0 / 8%);
+    box-shadow: var(--shadow);
+}
+.writeBlog_button {
+    width: 100%;
+    background-color: transparent;
+    font-size: 1.5em;
+    font-weight:500;
+    font-family: 'Source Serif Pro', serif;
+    border: none;
+    cursor: pointer;
+}
+.writeBlog_button:hover {
+    font-weight: 600;
+    text-shadow: 2px 2px 5px #b7b7b8;
+}
+.blogbar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 83%;
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #fff;
+}
+.blogbar h1 {
+    background-color: white;
+    font-weight: 100;
+    font-size: 2rem;
+    color: black;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.empty-bloglist-text {
+    margin: 10px auto;
+    font-size: 115%;
+}

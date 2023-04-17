@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')  %>
+<link rel="stylesheet" href="/stylesheets/form-styling.css">
+<link rel="stylesheet" href="/stylesheets/buttons/button.css">
+
+<span class="form">
+    <div class="heading">
+        <h1>Signup</h1>
+    </div>
+    
+    <form action="/signup" method="POST">   
+        <div class="inputVal">
+            <div class="inputHeading">
+                <label for="username">Username</label>
+            </div>
+            <input type="text" name="username" id="username" required>
+        </div>
+        
+        <div class="inputVal">
+            <div class="inputHeading">
+                <label for="password">Password</label>
+            </div>
+            <input type="password" name="password" id="password" required>
+        </div>
+        
+        <button id="signup-login-btn" class="btn">Signup</button>
+    </form>
+        
+            
+    <p>Already have an account? <a href="/login">Login</a></p>
+</span>

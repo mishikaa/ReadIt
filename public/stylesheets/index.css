@@ -1,0 +1,94 @@
+.blogs-display {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.blog-display a{
+    cursor:cell;
+}
+
+.blog-card {
+    margin: 20px;
+    width: 40rem;
+    background-color: var(--white);
+    box-shadow: rgba(251, 250, 250, 0.16) 0px 3px 6px, rgba(192, 192, 192, 0.96) 0px 3px 6px;
+}
+
+.blog-card #blog-img {
+    width: 100%;
+    height: 20rem;
+}
+
+.blog-content {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem ;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+    color: rgb(113, 113, 113);
+}
+
+.blog-content h4 {
+    font-weight: 500;
+}
+
+.blog-content h2 {
+    color: black;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+}
+
+.blog-content .user {
+    text-align: end;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    color: #2b2d42;
+
+}
+.blog-story {
+    font-size: 1.5rem;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blog-footer .icons{
+    font-size: 2rem;
+}
+
+/* on-click icons */
+.blog-footer .clicked ion-icon[name="heart"]{
+    color: red;
+}
+
+.blog-footer .clicked ion-icon[name="bookmark"]{
+    color: black;
+}
+
+.blog-footer .clicked{
+    display: none; 
+    width: 0;
+}
+
+.blog-footer .active .clicked ion-icon[name="heart"]{
+    display: block;
+    font-size: 2rem;
+}
+
+.blog-footer .active ion-icon[name="heart-outline"]{
+    display: none;
+    width: 0;
+}
+
+.blog-footer .active .clicked ion-icon[name="bookmark"]{
+    display: block;
+    font-size: 2rem;
+}
+
+.blog-footer .active ion-icon[name="bookmark-outline"]{
+    display: none;
+    width: 0;
+}

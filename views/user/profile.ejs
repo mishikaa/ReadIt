@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="profile.css">
+    <link rel="icon" href="images/website_logo.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="./stylesheets/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    
+    <div class="profile">
+        <div class="cover">
+            <img src = "images/defaultprofile.jpg">
+        </div>
+        <div class = "title">
+            <span style="font-weight: bold;">Name</span>
+            <span>username</span>
+        </div>
+    </div>
+    <div class="infobar">
+        <div class="bar1">
+            <span>
+                <p>Total Blogs</p>
+                <p>0</p>
+            </span>
+            <span>
+                <p>Followers</p>
+                <p>0</p>
+            </span>
+            <span>
+                <p>Following</p>
+                <p>0</p>
+            </span>
+            
+        </div>
+        <div class="bar2">
+            <button class="writeBlog_button" type="button"><a href="/blogs/write" style="text-decoration: none;color: black;"> + Write a blog</a></button>
+        </div>
+        <div class="blogbar">
+            <h1>My Blogs</h1>
+            <p class="empty-bloglist-text">Seems like you haven't started writing yet!</p>
+        </div>
+    </div>
+    <div id="nav-placeholder">
+    </div>
+    <script>
+    $(function(){
+      $("#nav-placeholder").load("footer.html");
+    });
+    </script>
+
+</body>
+</html>
