@@ -45,10 +45,10 @@ intuitive user interface and powerful features, ReadIt aims to create a vibrant 
 others, and foster meaningful discussions.
 
 ### Home Page
-![Homepage ScreenShot](screenshots/homepage.png/468x300)
+![Homepage ScreenShot](screenshots/homepage.png)
 
 ### Mobile View
-![Homepage mobile ScreenShot](screenshots/mobilePage.png/250x360)
+![Homepage mobile ScreenShot](screenshots/mobilePage.png)
 
 ### Read Blogs
 ![readpage ScreenShot](screenshots/readpage.png)
