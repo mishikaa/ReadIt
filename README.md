@@ -53,15 +53,6 @@ others, and foster meaningful discussions.
 ### Read Blogs
 ![readpage ScreenShot](screenshots/readpage.png)
 
-### Blog 
-![blogpage ScreenShot](screenshots/blogpage.png)
-
-### About
-![aboutpage ScreenShot](screenshots/aboutpage.png)
-
-### Contact 
-![contactpage ScreenShot](screenshots/contactpage.png)
-
 ## Built With
 
 * [EJS](https://ejs.co/)
