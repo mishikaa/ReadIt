@@ -40,7 +40,20 @@
 
 ## About The Project
 
-![Screen Shot]()
+### Home Page
+![Homepage ScreenShot](screenshots/homepage.png)
+
+### Read Blogs
+![readpage ScreenShot](screenshots/readpage.png)
+
+### Blog 
+![blogpage ScreenShot](screenshots/blogpage.png)
+
+### About
+![aboutpage ScreenShot](screenshots/aboutpage.png)
+
+### Contact 
+![contactpage ScreenShot](screenshots/contactpage.png)
 
 ReadIt is a blogging platform designed to provide a platform for users to share and discover engaging content on a wide range of topics. With its 
 intuitive user interface and powerful features, ReadIt aims to create a vibrant community where individuals can express their thoughts, learn from 
