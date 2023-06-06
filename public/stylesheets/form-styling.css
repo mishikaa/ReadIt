@@ -8,6 +8,8 @@
 
 .form {
     display: flex;
+    width: 30rem;
+    margin: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;

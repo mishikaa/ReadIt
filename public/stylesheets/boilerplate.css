@@ -4,7 +4,7 @@
     --para-color: #80849c;
     --helper-color: #515151;
     --white: #fff;
-    --bg-color: #0F2027;
+    --bg-color: #071013;
     --delete-btn: #e63946;
     --edit-btn: #006d77;
     --primary-btn: #55a630;
@@ -27,6 +27,7 @@ body{
     background: var(--bg-color);  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  
     background: linear-gradient(to top, #2C5364, #203A43, #0F2027); 
+    background-repeat: no-repeat;
     color: var(--white);
     text-decoration: none;
     padding-top: 15rem;
