@@ -24,7 +24,7 @@ const { checkUser } = require('./middleware/authMiddleware');
 // CONNECT MONGOOSE
 mongoose.set('strictQuery', false);
 
-mongoose.connect('mongodb://0.0.0.0:27017/readIt', {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -103,8 +103,8 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', {statusCode, message});
 })
 
-app.listen(3000, ()=> {
-    console.log("LISTENING ON PORT 3000")
+app.listen(process.env.PORT, ()=> {
+    console.log(`LISTENING ON PORT ${process.env.PORT}`)
 })
 
 

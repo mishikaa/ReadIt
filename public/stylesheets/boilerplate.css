@@ -27,11 +27,10 @@ body{
     background: var(--bg-color);  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #2C5364, #203A43, #0F2027);  
     background: linear-gradient(to top, #2C5364, #203A43, #0F2027); 
-    background-repeat: no-repeat;
     color: var(--white);
     text-decoration: none;
     padding-top: 15rem;
-    
+    height: 100%;
 }
 
 a {

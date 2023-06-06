@@ -12,10 +12,11 @@
     align-items: center;
 
     height: 70vh;
+    margin-bottom: 20rem;
 }
 
 .mainbox {
-    height: 25rem;
+    height: max-content;
     padding: 1rem 5rem 5rem 5rem;
     color: black;
     border-radius: 30px;

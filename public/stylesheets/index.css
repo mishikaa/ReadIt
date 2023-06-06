@@ -2,6 +2,7 @@
     /* overflow-x: hidden; */
     display: grid;
     grid-template-columns: repeat(4,1fr);
+    margin-bottom: 20rem;
 }
 
 .blog-display a{
