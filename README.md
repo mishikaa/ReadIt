@@ -48,7 +48,7 @@ others, and foster meaningful discussions.
 ![Homepage ScreenShot](screenshots/homepage.png)
 
 ### Mobile View
-![Homepage mobile ScreenShot](screenshots/mobilepage.png)
+![Homepage mobile ScreenShot](screenshots/mobilePage.png)
 
 ### Read Blogs
 ![readpage ScreenShot](screenshots/readpage.png)
