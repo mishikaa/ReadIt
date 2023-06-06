@@ -7,25 +7,27 @@
 
 .footer {
     background-color: black;
-    width: 100%;
     font-size: 1.45rem;
-    margin-top: 10rem; 
     line-height: 1.5rem;
-}
 
-#mainfoot {
     display: flex;
+    position:sticky;
+    bottom: 0;
+    margin-top: 15rem;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
     padding: 1rem;
 }
 
-#mainfoot li a {
+
+
+.footer li a {
     font-family: 'Source Serif Pro', serif;
     line-height: 2rem;
 }
 
-#mainfoot a:hover, #mainfoot a:active {
+.footer a:hover, .footer a:active {
     text-shadow: 2px 2px 5px #f2e7e7;
     color: var(--white);
 

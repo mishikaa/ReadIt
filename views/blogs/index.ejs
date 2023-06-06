@@ -1,49 +1,42 @@
 <!-- TO DISPLAY ALL THE BLOGS -->
 <% layout('layouts/boilerplate') %>
 
+<link rel="stylesheet" href="/stylesheets/index.css" />
 
-<link rel="stylesheet" href="/stylesheets/index.css">
+<%- include('../partials/searchbar.ejs') %>
 
-<script>
-
-</script>
 <section class="blogs-display">
-    <% for(let blog of blogs) { %> 
-        <a href="/blogs/<%= blog._id %>">
-            <section class="blog-card">
-                <img id="blog-img" src="<%= blog.coverImg %>" alt="blog image">
-                
-                <div class="blog-content">
-                    <h4><%= blog.date %></h4>
-                    <h2><%= blog.title %></h2>
-                    <div class="user"> ~ <%= blog.user.username %></div>
-                    <div class="blog-story">
-                        <%- blog.content.p %>
-                    </div>
-                    
-                    <div class="blog-footer">
-                        <section class="tags">
-                            <% for(let tag of blog.tags) { %>
-                                <span>
-                                    <%= tag %>
-                                </span>
-                            <% } %>
-                        </section>
-                        
-                        <section class="icons">
-                            <ion-icon name="heart-outline"></ion-icon>
-                            <ion-icon name="bookmark-outline"></ion-icon>
-                        </section>
-                        <section class="icons clicked">
-                            <ion-icon name="heart"></ion-icon>
-                            <ion-icon name="bookmark"></ion-icon>
-                        </section>
-                    </div>
-                </div>
-            </section>   
-        </a>
-    <% } %> 
-</section>
+  <% for(let blog of blogs) { %>
+  <a href="/blogs/<%= blog._id %>">
+    <section class="blog-card">
+      <img id="blog-img" src="<%= blog.coverImg %>" alt="blog image" />
 
+      <div class="blog-content">
+        <h4><%= blog.date %></h4>
+        <h2><%= blog.title %></h2>
+        <div class="user">~ <%= blog.user.username %></div>
+        <div class="blog-story"><%- blog.content.p %></div>
+
+        <div class="blog-footer">
+          <section class="tags">
+            <% for(let tag of blog.tags) { %>
+            <span> <%= tag %> </span>
+            <% } %>
+          </section>
+
+          <section class="icons">
+            <ion-icon name="heart-outline"></ion-icon>
+            <ion-icon name="bookmark-outline"></ion-icon>
+          </section>
+          <section class="icons clicked">
+            <ion-icon name="heart"></ion-icon>
+            <ion-icon name="bookmark"></ion-icon>
+          </section>
+        </div>
+      </div>
+    </section>
+  </a>
+  <% } %>
+</section>
 
 <script src="/javascripts/icon.js"></script>

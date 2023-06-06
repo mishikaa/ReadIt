@@ -1,13 +1,39 @@
-    <% layout('layouts/boilerplate') %>
+<% layout('layouts/boilerplate') %>
 
-    <h1>Edit <%= blog.title %> </h1>
-    <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
-        <label for="title">Title</label>
-        <input type="text" name="blog[title]" id="title" value="<%= blog.title %> ">
-        <br>
-        <label for="content">Write below</label>
-        <textarea name="blog[content]" id="content" value="<%= blog.content %>"></textarea>
-        <button>Add Blog</button>
-        
-        <a href="/blogs">Back</a>
-    </form>
+<link
+  href="https://fonts.googleapis.com/css2?family=Cambo&family=DM+Serif+Display&family=Montserrat&family=Noto+Sans+JP:wght@300&family=Playfair+Display&family=Roboto&family=Source+Serif+Pro&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="stylesheet" href="/stylesheets/write.css" />
+<link rel="stylesheet" href="/stylesheets/buttons/button.css" />
+
+
+<div class="form">
+  <h1>Edit Blog</h1>
+  <form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+    <input 
+      type="text" 
+      id="title" 
+      name="blog[title]" 
+      value = "<%= blog.title %>"
+    />
+    <input
+      type="text"
+      id="coverImg"
+      class="cover-img"
+      name="blog[coverImg]"
+      value = "<%= blog.coverImg %>"
+      placeholder="Add a cover image URL"
+      required
+    />
+
+    <textarea
+      id="tiny"
+      name="blog[content]"
+      value= <%-blog.content%>
+    ></textarea>
+    <button id="add-blog-btn" class="btn">Edit Blog</button>
+  </form>
+</div>
+

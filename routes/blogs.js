@@ -23,6 +23,7 @@ router.route('/')
 //Get Route for creating new blog
 router.get('/write', requireAuth, catchAsync(blogs.create_get))
 
+router.get('/search', requireAuth, catchAsync(blogs.search))
 
 router.route('/:id')
     //----- DISPLAYING A BLOG -----

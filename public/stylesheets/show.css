@@ -33,23 +33,36 @@
     text-align: right;
     font-style: italic;
 }
+
+.blog-section #content {
+    line-height: 40px;
+}
+
+.blog-section #content h1,h2{
+    margin-bottom: 10px;
+}
 /* Styling comment-section */
 
 .blog .comment-section {
     color: black;
-    background-color: #cff8bc;
     display: flex;
+    flex-wrap: wrap;
     flex-direction:column;
     padding: 1rem 2rem;
 }
 
 .comment-section .add-comment-form, .comment-section .display-comment{
     background-color: aliceblue;
-    padding: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+.display-comment h4{
+    margin-bottom: 5px;
+}
 .comment-section h1{
+    color: var(--primary-color);
     font-size: 2rem;
     text-align: center;
     padding-bottom: 1rem;

@@ -20,12 +20,9 @@ module.exports.create_post = async(req,res) => {
     if(!req.body.blog) {
         throw new AppError(400, "Cannot post an empty blog")
     }
-    const {title, content} = req.body.blog;
-    const blog = new Blog({title, content});
+    const {title, coverImg, content, tags} = req.body.blog;
+    const blog = new Blog({title, coverImg, content, tags});
     blog.user = res.locals.currentUser._id; //Storing the current user id in the user attribute of blog
-    
-    const coverImg = content.substring(content.indexOf("<img src=")+10, content.indexOf(`" alt`));
-    blog.coverImg = coverImg;
 
     await blog.save();
     req.flash('success', 'Successfully created the new blog!')
@@ -73,4 +70,18 @@ module.exports.delete = async(req, res, next) => {
     await Blog.findByIdAndDelete(id);
     req.flash('success', 'Successfully deleted the blog!')
     res.redirect('/blogs');
+}
+
+//Get request method to search 
+module.exports.search = async(req, res, next) => {
+    const query = req.query.search ? {
+        // if a req.query.search exists, then either the username or email matches the string in query(pattern matching)
+        $or : [
+            {tags: {$regex: req.query.search, $options: "i"}},
+            {content: {$regex: req.query.search, $options: "i"}},
+        ]
+    } : {}
+    // Find all the users having the string as per the query.search in their email or username except the user that is currently logged in
+    const blogs = await Blog.find(keyword)
+    res.send(blogs)
 }

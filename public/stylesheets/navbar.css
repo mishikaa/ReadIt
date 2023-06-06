@@ -3,9 +3,9 @@
  --------------- */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0px;
     width: 100%;
+    margin: 0;
     background-color: black;
     opacity: 0.9;
     z-index: 99;
@@ -17,13 +17,14 @@
  --------------- */
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.75rem;
 }
 
 .mobile-navbar-btn {
-    padding: 1.2rem;
+    padding: 0.75rem 1rem;
     font-size: 5rem;
     color: var(--white);
     cursor: pointer;
@@ -93,16 +94,12 @@
     color: var(--white);
 }
 
-.dropdown-content {
-    display: none
-}
-
 /* -----------------
   STYLING THE 'Get Started' BUTTON
  --------------- */
 
 .rightbar .btn{
-    padding: 1.2rem 2.4rem;
+    padding: 12px 24px;
     background-color: var(--white);
     font-weight: 600;
     border: 1px solid var(--helper-color);

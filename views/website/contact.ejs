@@ -1,13 +1,54 @@
-<% layout('layouts/boilerplate')  %>
-<link rel="stylesheet" href="/stylesheets/contact.css">
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/stylesheets/contact.css" />
+<link rel="stylesheet" href="/stylesheets/buttons/button.css" />
+
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("NXB9Ii1cByTHJ4XA4");
+  })();
+</script>
 
 <div class="contact">
-    <form action="">
-        <label for="name">Name</label>
-        <input type="text">
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email">
-        <label for="message">Message</label>
-        <textarea name="message" id="" cols="30" rows="10"></textarea>
-    </form>
+  <h1>Contact</h1>
+  <div class="input">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" />
+  </div>
+  <div class="input">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" />
+  </div>
+  <div class="input">
+    <label for="message">Message</label>
+    <textarea name="message" id="message" cols="30" rows="5"></textarea>
+  </div>
+  <button class="btn" id="primary-btn" onclick="sendMail()">Send</button>
 </div>
+
+<script>
+  const sendMail = () => {
+    console.log("clicked");
+    const params = {
+      from_name: document.getElementById("name").value,
+      email_id: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    };
+    const service_id = "service_m2hq92b";
+    const template_id = "template_4ui6aga";
+    emailjs.send(service_id, template_id, params).then(
+      function (response) {
+        (document.getElementById("name").value = ""),
+          (document.getElementById("email").value = ""),
+          (document.getElementById("message").value = "");
+        console.log("SUCCESS!", response.status, response.text);
+      },
+      function (err) {
+        console.log("FAILED...", err);
+      }
+    );
+  };
+</script>

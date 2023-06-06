@@ -1,25 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="icon" href="/images/website_logo.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/images/website_logo.png" type="image/x-icon" />
     <title>ReadIt</title>
-    
-    <link rel="stylesheet" href="/stylesheets/boilerplate.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&family=Montserrat&family=Playfair+Display&family=Roboto&family=Source+Serif+Pro&display=swap" rel="stylesheet">
-</head>
 
-<body class="if-flex">
+    <link rel="stylesheet" href="/stylesheets/boilerplate.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Display&family=Montserrat&family=Playfair+Display&family=Roboto&family=Source+Serif+Pro&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- TinyMCE -->
+    <script
+      src="https://cdn.tiny.cloud/1/b9gxmjx63cunv16cclazf14eb2wfcbo22slv60z15oi6kcx3/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+
+    <script>
+      tinymce.init({
+        selector: "textarea#tiny",
+        branding: false,
+        menubar: false,
+        resize: false,
+        plugins: [
+          "a11ychecker",
+          "advlist",
+          "advcode",
+          "advtable",
+          "autolink",
+          "checklist",
+          "export",
+          "lists",
+          "link",
+          "image",
+          "charmap",
+          "preview",
+          "anchor",
+          "searchreplace",
+          "visualblocks",
+          "powerpaste",
+          "fullscreen",
+          "formatpainter",
+          "insertdatetime",
+          "media",
+          "table",
+          "wordcount",
+        ],
+        toolbar:
+          "undo redo | a11ycheck casechange blocks | bold italic backcolor | alignleft aligncenter alignright alignjustify |" +
+          "bullist numlist checklist outdent indent | removeformat | code table help | link image",
+        file_picker_types: "file image media",
+
+        file_picker_callback: function (cb, value, meta) {
+          var input = document.createElement("input");
+          input.setAttribute("type", "file");
+          input.setAttribute("accept", "image/*");
+
+          /*
+              Note: In modern browsers input[type="file"] is functional without
+              even adding it to the DOM, but that might not be the case in some older
+              or quirky browsers like IE, so you might want to add it to the DOM
+              just in case, and visually hide it. And do not forget do remove it
+              once you do not need it anymore.
+            */
+
+          input.onchange = function () {
+            var file = this.files[0];
+
+            var reader = new FileReader();
+            reader.onload = function () {
+              /*
+                  Note: Now we need to register the blob in TinyMCEs image blob
+                  registry. In the next release this part hopefully won't be
+                  necessary, as we are looking to handle it internally.
+                */
+              var id = "blobid" + new Date().getTime();
+              var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+              var base64 = reader.result.split(",")[1];
+              var blobInfo = blobCache.create(id, file, base64);
+              blobCache.add(blobInfo);
+
+              /* call the callback and populate the Title field with the file name */
+              cb(blobInfo.blobUri(), { title: file.name });
+            };
+            reader.readAsDataURL(file);
+          };
+
+          input.click();
+        },
+      });
+    </script>
+  </head>
+
+  <body>
     <!-- INCLUDING THE NAVBAR -->
-    <%- include('../partials/navbar.ejs') %>
-    <%- include('../partials/flash.ejs') %>
-    <%-body%>
-    <%- include('../partials/footer.ejs') %>
-
-</body>
+    <%- include('../partials/navbar.ejs') %> <%-
+    include('../partials/flash.ejs') %> <%-body%> <%-
+    include('../partials/footer.ejs') %>
+  </body>
 </html>

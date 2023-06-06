@@ -33,3 +33,7 @@
 #add-blog-btn {
     background-color: var(--edit-btn);
 }
+
+#primary-btn {
+    background-color: var(--primary-btn);
+}

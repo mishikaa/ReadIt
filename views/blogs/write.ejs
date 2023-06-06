@@ -1,76 +1,62 @@
 <% layout('layouts/boilerplate') %>
-<link href="https://fonts.googleapis.com/css2?family=Cambo&family=DM+Serif+Display&family=Montserrat&family=Noto+Sans+JP:wght@300&family=Playfair+Display&family=Roboto&family=Source+Serif+Pro&display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?family=Cambo&family=DM+Serif+Display&family=Montserrat&family=Noto+Sans+JP:wght@300&family=Playfair+Display&family=Roboto&family=Source+Serif+Pro&display=swap"
+  rel="stylesheet"
+/>
 
-<link rel="stylesheet" href="/stylesheets/write.css">
-<link rel="stylesheet" href="/stylesheets/buttons/button.css">
+<link rel="stylesheet" href="/stylesheets/write.css" />
+<link rel="stylesheet" href="/stylesheets/buttons/button.css" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 <div class="form">
-    <h1>Write a New Blog</h1>
-    <form action="/blogs" method="POST">
-        <input type="text" id="title" name="blog[title]" placeholder="Title">
-        <!-- <label for="cover-img">Add a cover image</label>
-        <input type="file" name="image" id=""> -->
-        <textarea id="tiny" name="blog[content]" id="content" placeholder="Share your story ..."></textarea>
-        <button id="add-blog-btn" class="btn">Add Blog</button>
-    </form>
+  <h1>Write a New Blog</h1>
+  <form action="/blogs" method="POST">
+    <input type="text" id="title" name="blog[title]" placeholder="Title" />
+    <input
+      type="text"
+      id="coverImg"
+      value=""
+      class="cover-img"
+      name="blog[coverImg]"
+      placeholder="Add a cover image URL"
+      required
+    />
+
+    <textarea
+      id="tiny"
+      name="blog[content]"
+      id="content"
+      value=""
+      placeholder="Share your story ..."
+    ></textarea>
+    <input type="search" name="blog[tags]" id="search" placeholder="Add Tags" />
+    <button id="add-blog-btn" class="btn">Add Blog</button>
+  </form>
+
+  <script>
+    $(function () {
+      $("#search").autocomplete({
+        source: function (req, res) {
+          $.ajax({
+            url: "autocomplete/",
+            dataType: "jsonp",
+            type: "GET",
+            data: req,
+            success: function (data) {},
+            error: function (err) {
+              console.log(err.status);
+            },
+          });
+        },
+        minLength: 1,
+        select: function (event, ui) {
+          if (ui.item) {
+            $("#search").text(ui.item.label);
+          }
+        },
+      });
+    });
+  </script>
 </div>
-
-
-<!-- TinyMCE -->
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
-<script>
-  tinymce.init({
-    selector: 'textarea#tiny',
-        branding: false,
-        menubar: false,
-        resize: false,
-        plugins: [
-        'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
-        'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
-        'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','wordcount'
-        ],
-        toolbar: 'undo redo | a11ycheck casechange blocks | bold italic backcolor | alignleft aligncenter alignright alignjustify |' +
-        'bullist numlist checklist outdent indent | removeformat | code table help | link image',
-        file_picker_types: 'file image media',
-        
-        file_picker_callback: function (cb, value, meta) {
-        var input = document.createElement('input');
-        input.setAttribute('type', 'file');
-        input.setAttribute('accept', 'image/*');
-    
-        /*
-          Note: In modern browsers input[type="file"] is functional without
-          even adding it to the DOM, but that might not be the case in some older
-          or quirky browsers like IE, so you might want to add it to the DOM
-          just in case, and visually hide it. And do not forget do remove it
-          once you do not need it anymore.
-        */
-    
-        input.onchange = function () {
-          var file = this.files[0];
-    
-          var reader = new FileReader();
-          reader.onload = function () {
-            /*
-              Note: Now we need to register the blob in TinyMCEs image blob
-              registry. In the next release this part hopefully won't be
-              necessary, as we are looking to handle it internally.
-            */
-            var id = 'blobid' + (new Date()).getTime();
-            var blobCache =  tinymce.activeEditor.editorUpload.blobCache;
-            var base64 = reader.result.split(',')[1];
-            var blobInfo = blobCache.create(id, file, base64);
-            blobCache.add(blobInfo);
-    
-            /* call the callback and populate the Title field with the file name */
-            cb(blobInfo.blobUri(), { title: file.name });
-          };
-          reader.readAsDataURL(file);
-        };
-
-    input.click();
-  },
-    })
-    
-</script>
-

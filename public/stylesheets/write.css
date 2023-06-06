@@ -21,7 +21,9 @@ input {
     background-color: var(--bg-color);           
 }
 
-
+.cover-img {
+    font-size: 2rem;
+}
 textarea {
     width: 100%;
     height: 100vh;
