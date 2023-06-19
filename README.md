@@ -112,4 +112,4 @@ Distributed under the MPL-2.0 License. See [LICENSE](https://github.com/mishikaa
 
 ## Authors
 
-* **Mishika Jaiswal** - *Comp Science Student* - [Shaan Khan](https://github.com/mishikaa/) - *All Work*
+* **Mishika Jaiswal** - *Comp Science Student* - [Mishika Jaiswal](https://github.com/mishikaa/) - *All Work*
